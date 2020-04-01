@@ -63,6 +63,10 @@ console.log('do third thing');
 
 // expected output
 
+do first thing
+do second thing
+do third thing
+
 ```
 
 _What is expected here?_
@@ -80,7 +84,9 @@ setTimeout(function() {
 }, 2000);
 console.log('do third thing');
 ```
-
+first
+third 
+second
 ---
 
 ### Important
@@ -135,7 +141,13 @@ function tellWorld(message, callback) {
     callback();
 };
 ```
-
+tellWorld('message1', function(){
+    tellWorld('message2', function(){
+        tellWorld('message3', function(){
+            tellWorld('message4')
+        })
+    })
+})
 ---
 
 Sooo.... Is a callback _synchronous_ or _asynchronous_?
